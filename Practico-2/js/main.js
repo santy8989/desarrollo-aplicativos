@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 let selected
 let personas
 let table = document.querySelector("#data-table");
+let loading = document.querySelector("#loading");
 
 async function getPerson() {
   table.innerHTML = ""
+  loading.style.display="block"
   await fetch('https://610f5d459b698d0017175310.mockapi.io/api/v1/Personas').then(response => {
     response.json().then(resp => {
       personas = resp
@@ -40,6 +42,7 @@ function buildPerson(type) {
 }
 
 function updateTable() {
+  loading.style.display="none"
   table.innerHTML = '<thead class="table-dark"><tr><th>ID</th><th></th><th>Nombre y apellido</th><th>Titulo</th><th>Dirección</th><th>Edad</th><th>Acción</th></tr></thead>'
   personas.map(persona => {
     table.innerHTML += '<tr><td>' + persona.id +
@@ -82,7 +85,7 @@ async function addPerson(persona) {
 async function deletePerson(id) {
   selected = id
   let selectedPerson = personas.filter(person => person.id == id);
-  if (window.confirm("Seguro quiere a " + selectedPerson[0].nombre + " " + selectedPerson[0].apellido + " de la tabla?\n No puede deshacer esta acción.")) {
+  if (window.confirm("Seguro quiere eliminar a " + selectedPerson[0].nombre + " " + selectedPerson[0].apellido + " de la tabla?\n No puede deshacer esta acción.")) {
     await fetch('https://610f5d459b698d0017175310.mockapi.io/api/v1/Personas/' + id, {
       headers: {
         'Accept': 'application/json',
