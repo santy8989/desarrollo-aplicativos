@@ -1,0 +1,30 @@
+.avatar {
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.custom {
+  max-height: 90vh !important;
+}
+
+.fondo {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+  background-color: rgba(14, 14, 19, 0.207);
+  top: 0;
+  left: 0;
+  z-index: 1330;
+}
+
+.modal {
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  top: 25vh;
+  left: 35vw;
+  padding: 10px;
+
+}
