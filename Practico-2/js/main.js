@@ -82,7 +82,7 @@ async function addPerson(persona) {
 async function deletePerson(id) {
   selected = id
   let selectedPerson = personas.filter(person => person.id == id);
-  if (window.confirm("Seguro quiere a " + selectedPerson[0].nombre + " " + selectedPerson[0].apellido + " de la tabla?\n No puede desacer esta acción.")) {
+  if (window.confirm("Seguro quiere a " + selectedPerson[0].nombre + " " + selectedPerson[0].apellido + " de la tabla?\n No puede deshacer esta acción.")) {
     await fetch('https://610f5d459b698d0017175310.mockapi.io/api/v1/Personas/' + id, {
       headers: {
         'Accept': 'application/json',
