@@ -1,0 +1,11 @@
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" >sidenav</mat-sidenav>
+    
+    <mat-sidenav-content>
+        <button (click)="sidenav.toggle()"><mat-icon >reorder</mat-icon></button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>
