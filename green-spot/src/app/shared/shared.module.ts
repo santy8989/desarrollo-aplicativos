@@ -7,16 +7,23 @@ import {MatIconModule} from '@angular/material/icon';
 import { NavHeaderComponent } from './nav-header/nav-header.component'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { CardComponent } from './card/card.component'
+
 
 
 @NgModule({
   declarations: [
     SidenavComponent,
-    NavHeaderComponent
+    NavHeaderComponent,
+    ImageSliderComponent,
+    CardComponent
   ],
   exports: [
     SidenavComponent,
-    NavHeaderComponent
+    NavHeaderComponent,
+    ImageSliderComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +32,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
-  
   ]
 })
 export class SharedModule {

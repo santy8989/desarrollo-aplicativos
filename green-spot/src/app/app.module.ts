@@ -10,6 +10,7 @@ import { StoreModule } from './stores/store.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProductsModule } from './products/products.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
