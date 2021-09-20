@@ -5,6 +5,8 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { HomeProductsComponent } from './components/home-products/home-products.component';
 import { ShowProductsComponent } from './components/show-products/show-products.component';
 import { SharedModule } from '../shared/shared.module';
+import { PaginatePipe } from '../pipes/paginate.pipe';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -13,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     AdminProductsComponent,
              HomeProductsComponent,
-             ShowProductsComponent
+             ShowProductsComponent,
+             PaginatePipe
   ],
   exports: [
     ShowProductsComponent
@@ -21,7 +24,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatPaginatorModule
   ]
 })
 export class ProductsModule {

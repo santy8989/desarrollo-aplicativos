@@ -1,0 +1,42 @@
+.cover{
+    object-fit: cover;
+    height: 50vh;
+    margin-top: 20ox;
+}
+.box{
+position: absolute ;
+top: 20vh ; 
+
+margin-left:10vw;
+margin-right:10vw;
+left:0;
+right:0;
+
+/* background-color: red; */
+color:white;
+z-index: 2;
+border: 1px solid #fff;
+
+}
+.titulo{
+    margin: 5vh;
+   text-align: center;
+    font-size: 8vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.underbox{
+position: absolute ;
+top: 30vh ; 
+margin-left:10vw;
+margin-right:10vw;
+left:0;
+right:0;
+color:white;
+z-index: 2;
+}
+.subtitulo{
+    margin: 5vh;
+   text-align: center;
+    font-size: 4    vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

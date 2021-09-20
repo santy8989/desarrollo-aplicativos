@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import { LandingComponent } from './components/landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductsModule } from '../products/products.module';
+import { StoreModule } from '../stores/store.module';
 
 
 
@@ -18,7 +19,8 @@ import { ProductsModule } from '../products/products.module';
     CommonModule,
     RouterModule,
     SharedModule,
-    ProductsModule
+    ProductsModule,
+    StoreModule
   ]
 })
 export class HomeModule {

@@ -8,7 +8,9 @@ import { NavHeaderComponent } from './nav-header/nav-header.component'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
-import { CardComponent } from './card/card.component'
+import { CardComponent } from './card/card.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CoverImageComponent } from './cover-image/cover-image.component'
 
 
 
@@ -17,13 +19,17 @@ import { CardComponent } from './card/card.component'
     SidenavComponent,
     NavHeaderComponent,
     ImageSliderComponent,
-    CardComponent
+    CardComponent,
+    CategoriesComponent,
+    CoverImageComponent
   ],
   exports: [
     SidenavComponent,
     NavHeaderComponent,
     ImageSliderComponent,
-    CardComponent
+    CardComponent,
+    CategoriesComponent,
+    CoverImageComponent
   ],
   imports: [
     CommonModule,
