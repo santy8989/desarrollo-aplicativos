@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '../../interfaces/store.interface';
+// import { Store } from '../../interfaces/store.interface';
 import { StoreService } from '../../services/store.service';
+import { Data } from '../../../interfaces/data.interface';
 
 @Component({
   selector: 'app-show-stores',
@@ -8,7 +9,7 @@ import { StoreService } from '../../services/store.service';
   styleUrls: ['./show-stores.component.css']
 })
 export class ShowStoresComponent implements OnInit {
-  tiendas: Store[]
+  tiendas: Data[]
 
   constructor(private _storeService: StoreService) { }
 

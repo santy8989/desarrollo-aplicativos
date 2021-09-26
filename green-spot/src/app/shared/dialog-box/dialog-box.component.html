@@ -1,0 +1,31 @@
+<!-- dialog-box.component.html -->
+
+<div mat-dialog-content>
+  <h1 mat-dialog-title> <strong>{{action}} Producto</strong></h1>
+  <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
+    <mat-form-field >
+      <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
+    </mat-form-field>
+    <mat-form-field >
+      <input  placeholder="URL image" matInput [(ngModel)]="local_data.image">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Descripción</mat-label>
+      <textarea matInput
+                [(ngModel)]="local_data.descrip"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"
+                ></textarea>
+    </mat-form-field>
+  </ng-container>
+  <ng-template #elseTemplate>
+   Seguro quiere eliminar <b>{{local_data.title}}</b>?
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button type="submit" *ngIf="type=='product'" [disabled]="!isValid" mat-button (click)="Submit()">{{action}}</button>
+  
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
+</div>

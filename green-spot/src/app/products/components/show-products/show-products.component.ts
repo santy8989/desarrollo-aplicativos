@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Product } from '../../interfaces/product.interface';
 import {ProductService} from "../../services/product.service";
+import { Data } from '../../../interfaces/data.interface';
+
 
 @Component({
   selector: 'app-show-products',
@@ -9,7 +11,7 @@ import {ProductService} from "../../services/product.service";
   styleUrls: ['./show-products.component.css']
 })
 export class ShowProductsComponent implements OnInit {
-  productos: Product[]
+  productos: Data[]
   @Input () page_size: number;
   page_number: number=1
   pageSizeOptions: number[]=[5,10,15,20]
