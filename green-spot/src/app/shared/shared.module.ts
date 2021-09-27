@@ -16,7 +16,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -24,6 +24,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { LongCardComponent } from './long-card/long-card.component';
+import { PaginatePipe } from '../pipes/paginate.pipe';
 
 
 
@@ -36,7 +38,10 @@ import { MatSortModule } from '@angular/material/sort';
     CategoriesComponent,
     CoverImageComponent,
     DataTableComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    LongCardComponent,
+    PaginatePipe
+
   ],
   exports: [
     SidenavComponent,
@@ -48,7 +53,10 @@ import { MatSortModule } from '@angular/material/sort';
     DataTableComponent,
     DialogBoxComponent,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    LongCardComponent,
+    PaginatePipe
+
   ],
   imports: [
     CommonModule,
@@ -66,7 +74,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatButtonModule,
     MatInputModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {

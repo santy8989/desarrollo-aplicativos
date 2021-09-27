@@ -7,6 +7,7 @@ import { ShowProductsComponent } from './components/show-products/show-products.
 import { SharedModule } from '../shared/shared.module';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {ProductoViewComponent  } from './components/producto-view/producto-view.component';
 
 
 
@@ -16,10 +17,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AdminProductsComponent,
              HomeProductsComponent,
              ShowProductsComponent,
-             PaginatePipe
+             
+             ProductoViewComponent,
+                            
   ],
   exports: [
-    ShowProductsComponent
+    ShowProductsComponent,
+    ProductoViewComponent
   ],
   imports: [
     CommonModule,

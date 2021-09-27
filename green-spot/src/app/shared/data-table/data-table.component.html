@@ -1,10 +1,10 @@
 <!-- app.component.html -->
 <div class="container text-center">
   <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Busacar Productos">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar {{type|titlecase }}s">
   </mat-form-field>
 
-    <button mat-button (click)="openDialog('Agregar',{})" mat-flat-button color="primary" class="sticky left-0">Agregar producto</button>
+    <button mat-button (click)="openDialog('Agregar',{})" mat-flat-button color="primary" class="sticky left-0">Agregar {{type}}</button>
   <div >
     <table  mat-table [hidden]="!dataSource.data.length" [dataSource]="dataSource"  #mytable  matSort multiTemplateDataRows class=" mat-elevation-z8">
       

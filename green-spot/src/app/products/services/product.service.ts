@@ -22,6 +22,11 @@ export class ProductService {
     const url = `${this.apiUrl}/products`
     return this.http.get<Data[]>(url)
   }
+  getProduct(id:string):Observable<Data> {
+   
+    const url = `${this.apiUrl}/products/${id}`
+    return this.http.get<Data>(url)
+  }
   addProduct(data):Observable<Data[]>{
     // data= JSON.stringify(data);
     console.log(data)
@@ -44,5 +49,18 @@ export class ProductService {
     // data= JSON.stringify(data);
    
     return this.http.delete<Data[]>(this.apiUrl+'products/'+id)
+  }
+  getComments(id):Observable<Comment[]>{
+    return this.http.get<Comment[]>(this.apiUrl+'comments?idProduct='+id)
+  }
+  addComments(id,form):Observable<Comment[]>{
+    console.log(form.value)
+    return this.http.post<Comment[]>(this.apiUrl+'comments',{
+      UserName:form.value.nombre,
+      comment:form.value.comentario,
+      score:form.value.score,
+      idProduct:id
+
+    })
   }
 }

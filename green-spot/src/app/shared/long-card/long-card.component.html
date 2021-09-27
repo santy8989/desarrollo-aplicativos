@@ -1,0 +1,53 @@
+<p>long-card works!</p>
+<div class="card mb-3">
+    <div class="card-head">
+        <h5 class="card-title custom-head">{{data.title}}asdasdasd</h5>
+      </div>
+    <img src={{data.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text custom-body">{{data.descrip}}</p>
+      <hr>
+      <div>
+        <p class="fs-3">opiniones:</p>
+        
+        <div *ngFor="let comment of comments" class="ms-4">
+            <p class=" fs-5 card-text ms-4 mt-2 text-muted">{{comment.UserName}}</p>
+            <div class="border rounded-pill custom">
+                <p class=" fs-4 mx-4 my-2">"{{comment.comment}}"</p>
+                <p class="fs-4 ms-4 my-2">puntuación: {{comment.score}}/5</p> 
+            </div>
+        </div>
+        <div>
+            <p class="fs-3 my-4">Agrega una opinion:</p>
+            <form [formGroup]="form">
+                <mat-form-field class="ms-4 w-100 pe-4 " >
+                    <input required formControlName="nombre" placeholder="Nombre de usuario (entre 3 y 20 carácteres)" class="w-100" matInput>
+                </mat-form-field>
+                <!-- <p *ngIf="form.get('nombre').errors.required" class="custom-err ms-4">Por favor ingrese un nombre de al menos 3 carácteres</p>
+                <p *ngIf="form.get('nombre').errors.min" class="custom-err ms-4">Por favor ingrese un nombre de al menos 3 carácteres</p>
+                <p *ngIf="form.get('nombre').errors.max" class="custom-err ms-4">Por favor ingrese un nombre de no mas de 10 carácteres </p> -->
+                <mat-form-field class="ms-4 w-100 pe-4 " >
+                    <input required formControlName="comentario" placeholder="Comentario( min 6 carácteres)" class="w-100" matInput>
+                </mat-form-field>
+                <!-- <p *ngIf="form.get('comentario').errors.required" class="custom-err ms-4">Por favor ingrese un comentario de al menos 6 carácteres</p>
+                <p *ngIf="form.get('comentario').errors.min" class="custom-err ms-4">Por favor ingrese un comentario de al menos 6 carácteres</p>
+                <p *ngIf="form.get('comentario').errors.max" class="custom-err ms-4">Por favor ingrese un comentario de no mas de 30 carácteres </p> -->
+                <mat-form-field class="ms-4 w-100 pe-4 " >
+                    <input required type="number" formControlName="score"  placeholder="Puntuación (0 al 5)" class="w-100" matInput>
+                </mat-form-field>
+                <!-- <p *ngIf="form.get('score').errors.max" class="custom-err ms-4">Genial que te haya gustado pero es solo hasta 5 la puntuación</p>
+                <p *ngIf="form.get('score').errors.min" class="custom-err ms-4">tan mal estaba? 0 es la minima puntuación</p> -->
+                <!-- <p *ngIf="form.get('score').errors.required && form.get('score').dirty" class="custom-err ms-4">Por favor ingrese una puntuación del 0 al 5</p> -->
+                <div class="d-flex flex-row-reverse bd-highlight">
+                    <button [disabled]="!form.valid" type="button"  class="btn btn-primary btn-circle me-4 my-2"><mat-icon aria-hidden="false" aria-label="Agregar comentario" (click)="addComent()" >add</mat-icon></button>
+                </div>
+                <!-- <button >Enviar</button> -->
+            </form>
+          
+            
+            
+        </div>
+      
+    </div>
+    </div>
+  </div>

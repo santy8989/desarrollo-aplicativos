@@ -1,7 +1,7 @@
 <!-- dialog-box.component.html -->
 
 <div mat-dialog-content>
-  <h1 mat-dialog-title> <strong>{{action}} Producto</strong></h1>
+  <h1 mat-dialog-title> <strong>{{action}} {{type|titlecase}}</strong></h1>
   <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
     <mat-form-field >
       <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
@@ -25,7 +25,7 @@
   </ng-template>
 </div>
 <div mat-dialog-actions>
-  <button type="submit" *ngIf="type=='product'" [disabled]="!isValid" mat-button (click)="Submit()">{{action}}</button>
+  <button type="submit"  [disabled]="!isValid" mat-button (click)="Submit()">{{action}}</button>
   
   <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
 </div>

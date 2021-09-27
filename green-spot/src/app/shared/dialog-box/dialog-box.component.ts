@@ -5,6 +5,7 @@ import { Component, ElementRef, Inject, NgZone, Optional, ViewChild } from '@ang
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { take } from 'rxjs/operators';
 import { ProductService } from 'src/app/products/services/product.service';
+import { StoreService } from 'src/app/stores/services/store.service';
 import { Data } from '../../interfaces/data.interface';
 
 
@@ -36,6 +37,7 @@ export class DialogBoxComponent {
   constructor(private _ngZone: NgZone,
     public dialogRef: MatDialogRef<DialogBoxComponent>,
     private _productService: ProductService,
+    private _storeService: StoreService,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: Data) {
     console.log(data);
     this.local_data = {...data};
@@ -53,41 +55,92 @@ export class DialogBoxComponent {
       this.body.image = this.local_data.image
     if(this.local_data.descrip)
       this.body.descrip = this.local_data.descrip
-    switch (this.action) {
-      case "Agregar": {
-        this._productService.addProduct(this.body).subscribe(response => {
-          console.log(response);
-          this.dialogRef.close({
-            event: this.action,
-            data: this.local_data
-          });
-        }, error => {
-          console.error("tuve un Error" + error)
-        })
-      }
-      case "Editar": {
-        this._productService.editProduct(this.body,this.local_data.id).subscribe(response => {
-          this.dialogRef.close({
-            event: this.action,
-            data: this.local_data
-          });
-          console.log(response);
+      console.log(this.type,"bananaaaa")
+    if(this.type=="producto")
+    {
+       switch (this.action) {
+        case "Agregar": {
+          this._productService.addProduct(this.body).subscribe(response => {
+            console.log(response);
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+          }, error => {
+            console.error("tuve un Error" + error)
+          })
+        }
+        break;
+        case "Editar": {
+          this._productService.editProduct(this.body,this.local_data.id).subscribe(response => {
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+            console.log(response);
 
-        }, error => {
-          console.error("tuve un Error" + error)
+          }, error => {
+            console.error("tuve un Error" + error)
 
-        })
+          })
+        }
+        break;
+        case "Eliminar": {
+          this._productService.deleteProduct(this.local_data.id).subscribe(response => {
+            console.log(response);
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+          }, error => {
+            console.error("tuve un Error" + error)
+          })
+        }
+        break;
       }
-      case "Eliminar": {
-        this._productService.deleteProduct(this.local_data.id).subscribe(response => {
-          console.log(response);
-          this.dialogRef.close({
-            event: this.action,
-            data: this.local_data
-          });
-        }, error => {
-          console.error("tuve un Error" + error)
-        })
+    }else{
+      console.log("dentro del else",this.action)
+      switch (this.action) {
+        case "Agregar": {
+          console.log("agrefar")
+          this._storeService.addStore(this.body).subscribe(response => {
+            console.log(response);
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+          }, error => {
+            console.error("tuve un Error" + error)
+          })
+        }
+        break;
+        case "Editar": {
+          console.log("editar")
+          this._storeService.editStore(this.body,this.local_data.id).subscribe(response => {
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+            console.log(response);
+
+          }, error => {
+            console.error("tuve un Error" + error)
+
+          })
+        }
+        break;
+        case "Eliminar": {
+          console.log("eliminar")
+          this._storeService.deleteStore(this.local_data.id).subscribe(response => {
+            console.log(response);
+            this.dialogRef.close({
+              event: this.action,
+              data: this.local_data
+            });
+          }, error => {
+            console.error("tuve un Error" + error)
+          })
+        }
       }
     }
   }

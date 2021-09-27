@@ -1,0 +1,42 @@
+.custom-head{
+    font-size: 5vh;
+    margin-top: 2vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* margin-bottom: 2vh; */
+    line-height: 5vh;
+}
+.custom-body{
+    font-size: 2vh;
+    margin-top: 2vh;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* margin-bottom: 2vh; */
+    line-height: 3vh;
+}
+.custom-image{
+    width: 20vw;
+}
+.custom{
+    
+    margin-top:-0.75rem ;
+    background-color:rgb(184, 184, 184);
+}
+.comment-content{
+    color: red;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+margin:0rem 1rem 1rem 1rem;
+
+}
+.custom-err{
+    color: red;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+
+}
