@@ -1,7 +1,6 @@
-<p>long-card works!</p>
-<div class="card mb-3">
+<div *ngIf="isLoad; else loading" class="card mb-3">
     <div class="card-head">
-        <h5 class="card-title custom-head">{{data.title}}asdasdasd</h5>
+        <h5 class="card-title custom-head">{{data.title}}</h5>
       </div>
     <img src={{data.image}} class="card-img-top" alt="...">
     <div class="card-body">
@@ -51,3 +50,6 @@
     </div>
     </div>
   </div>
+  <ng-template #loading class="loader">
+    <app-spinner></app-spinner>
+  </ng-template>

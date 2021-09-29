@@ -14,11 +14,13 @@ export class ShowStoresComponent implements OnInit {
   @Input () page_size: number;
   page_number: number=1
   pageSizeOptions: number[]=[4,8,16,20]
+  isLoad:boolean=false
   constructor(private _storeService: StoreService) { }
 
   ngOnInit(): void {
     this._storeService.getStores().subscribe(response => {
-      console.log("tiendas",response);
+      // console.log("tiendas",response);
+      this.isLoad=true;
       this.tiendas = response;
     }, error => {
       console.error("tuve un Error" + error)

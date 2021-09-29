@@ -15,6 +15,7 @@ export class LongCardComponent implements OnInit {
   data:Data
   public form: FormGroup
   comments:Comment[]
+  isLoad:boolean=false;
   constructor(private _productService: ProductService,private _storeService: StoreService,private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
@@ -52,12 +53,14 @@ export class LongCardComponent implements OnInit {
 
   }
   getProduct(){
+    this.isLoad=false
     this._productService.getProduct(this.id).subscribe(response => {
       console.log(response);
       this.data=response
       this._productService.getComments(this.id).subscribe(response => {
         console.log(response);
         this.comments=response
+        this.isLoad=true;
       }, error => {
         console.error("tuve un Error" + error)
   
@@ -99,9 +102,11 @@ export class LongCardComponent implements OnInit {
     }
   }
   getStore(){
+    this.isLoad=false
     this._storeService.getStore(this.id).subscribe(response => {
       console.log(response);
       this.data=response
+      this.isLoad=true
       this._storeService.getComments(this.id).subscribe(response => {
         console.log(response);
         this.comments=response

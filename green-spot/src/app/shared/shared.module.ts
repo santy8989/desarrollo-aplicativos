@@ -26,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LongCardComponent } from './long-card/long-card.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -40,7 +41,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
     DataTableComponent,
     DialogBoxComponent,
     LongCardComponent,
-    PaginatePipe
+    PaginatePipe,
+    SpinnerComponent
 
   ],
   exports: [
@@ -55,7 +57,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
     MatPaginatorModule,
     MatSortModule,
     LongCardComponent,
-    PaginatePipe
+    PaginatePipe,
+    SpinnerComponent
 
   ],
   imports: [

@@ -15,12 +15,14 @@ export class ShowProductsComponent implements OnInit {
   @Input () page_size: number;
   page_number: number=1
   pageSizeOptions: number[]=[5,10,15,20]
+  isLoad:boolean=false
   constructor( private _productService: ProductService) { }
 
   ngOnInit(): void {
     
     this._productService.getProducts().subscribe(response => {
       console.log(response);
+      this.isLoad=true;
       this.productos = response;
     }, error => {
       console.error("tuve un Error" + error)

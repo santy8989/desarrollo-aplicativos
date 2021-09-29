@@ -21,6 +21,7 @@ export class DataTableComponent implements OnInit {
   pageSize: number = 5;
   isExpansive: boolean;
   pageSizeOptions: Array < number > = [5, 10, 20];
+  isLoad:boolean=false
 
   displayedColumns: string[] = ['image', 'title', 'descrip', 'action'];
   dataSource: MatTableDataSource < any > | null;
@@ -44,18 +45,18 @@ export class DataTableComponent implements OnInit {
     this.getData();
   }
   getData() {
+    this.isLoad=false
     this.dataSource = new MatTableDataSource();
     if (this.type=="producto")
     {
       this._productService.getProducts().subscribe(response => {
       console.log(response);
+      console.log("asdasd")
       this.data = response;
-      this.dataSource.data = this.data
-      console.log("data", this.dataSource)
+      this.dataSource.data = this.data 
       this.dataSource.paginator = this.paginator;
-      console.log("data", this.dataSource)
       this.dataSource.sort = this.sort;
-      this.flag = true
+      this.isLoad = true
       this.cd.detectChanges()
       console.log("hola", this.table, this.paginator)
     }, error => {
@@ -71,7 +72,7 @@ export class DataTableComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       console.log("data", this.dataSource)
       this.dataSource.sort = this.sort;
-      this.flag = true
+      this.isLoad = true
       this.cd.detectChanges()
       console.log("hola", this.table, this.paginator)
     }, error => {

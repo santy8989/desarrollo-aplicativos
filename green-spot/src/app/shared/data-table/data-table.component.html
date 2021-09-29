@@ -1,16 +1,18 @@
 <!-- app.component.html -->
-<div class="container text-center">
+<div class="container text-center" *ngIf="isLoad; else loading">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar {{type|titlecase }}s">
   </mat-form-field>
 
-    <button mat-button (click)="openDialog('Agregar',{})" mat-flat-button color="primary" class="sticky left-0">Agregar {{type}}</button>
-  <div >
-    <table  mat-table [hidden]="!dataSource.data.length" [dataSource]="dataSource"  #mytable  matSort multiTemplateDataRows class=" mat-elevation-z8">
-      
+  <button mat-button (click)="openDialog('Agregar',{})" mat-flat-button color="primary" class="sticky left-0">Agregar
+    {{type}}</button>
+  <div>
+    <table mat-table [hidden]="!dataSource.data.length" [dataSource]="dataSource" #mytable matSort multiTemplateDataRows
+      class=" mat-elevation-z8">
+
       <ng-container matColumnDef="descrip">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
-        <td mat-cell *matCellDef="let element" > {{element.descrip}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="mx-auto"> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.descrip}} </td>
       </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="title">
@@ -18,22 +20,26 @@
         <td mat-cell *matCellDef="let element" class="test"> {{element.title}} </td>
       </ng-container>
       <ng-container matColumnDef="image">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
         <td mat-cell *matCellDef="let element"> <img src="{{element.image}}" class="custom-image" alt=""> </td>
       </ng-container>
-  
+
       <!-- Action Column -->
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element" class="action-link"> 
-          <a (click)="openDialog('Editar',element)">Edit</a> | 
-          <a (click)="openDialog('Eliminar',element)">Delete</a>  
+        <td mat-cell *matCellDef="let element" class="action-link">
+          <a (click)="openDialog('Editar',element)"><button type="button" class="btn btn-primary m-1"><mat-icon aria-hidden="false" >edit</mat-icon></button></a> 
+          <a (click)="openDialog('Eliminar',element)"><button type="button" class="btn btn-danger m-1"><mat-icon aria-hidden="false" >delete</mat-icon></button></a>
         </td>
       </ng-container>
-  
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <mat-paginator [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" class="sticky left-0"></mat-paginator>
   </div>
-  </div>
+</div>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>
+

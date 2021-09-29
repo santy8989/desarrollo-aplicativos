@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Green Spot</a>
+    <div class="container-fluid bg-dark">
+      <a class="navbar-brand" routerLink="/home">
+        <img src="../../../assets/fevicon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        GreenSpot
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,24 +14,20 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              productos
+              Productos
             </a>
-            <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/products">Home</a></li>
               <li><a class="dropdown-item" routerLink="/products/admin">Admin</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tiendas
             </a>
-            <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/store">Home</a></li>
               <li><a class="dropdown-item" routerLink="/store/admin">Admin</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
         </ul>
