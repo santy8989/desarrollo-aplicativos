@@ -1,5 +1,5 @@
 <!-- app.component.html -->
-<div class="container text-center" *ngIf="isLoad; else loading">
+<div class=" text-center" [hidden]="!isLoad">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar {{type|titlecase }}s">
   </mat-form-field>
@@ -39,7 +39,7 @@
     <mat-paginator [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" class="sticky left-0"></mat-paginator>
   </div>
 </div>
-<ng-template #loading>
+<div [hidden]="isLoad">
   <app-spinner></app-spinner>
-</ng-template>
+</div>
 

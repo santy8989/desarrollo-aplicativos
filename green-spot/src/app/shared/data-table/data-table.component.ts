@@ -50,31 +50,24 @@ export class DataTableComponent implements OnInit {
     if (this.type=="producto")
     {
       this._productService.getProducts().subscribe(response => {
-      console.log(response);
-      console.log("asdasd")
       this.data = response;
       this.dataSource.data = this.data 
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.isLoad = true
       this.cd.detectChanges()
-      console.log("hola", this.table, this.paginator)
     }, error => {
       console.error("tuve un Error" + error)
 
     })
    }else{
     this._storeService.getStores().subscribe(response => {
-      console.log(response);
       this.data = response;
       this.dataSource.data = this.data
-      console.log("data", this.dataSource)
       this.dataSource.paginator = this.paginator;
-      console.log("data", this.dataSource)
       this.dataSource.sort = this.sort;
       this.isLoad = true
       this.cd.detectChanges()
-      console.log("hola", this.table, this.paginator)
     }, error => {
       console.error("tuve un Error" + error)
 
@@ -98,7 +91,6 @@ export class DataTableComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-    console.log(this.dataSource.filter);
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }

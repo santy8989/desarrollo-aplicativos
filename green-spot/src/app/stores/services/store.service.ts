@@ -13,13 +13,11 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
   getStores():Observable<Data[]> {
-    console.log("service")
     const url = `${this.apiUrl}/store`
     return this.http.get<Data[]>(url)
   }
   addStore(data):Observable<Data[]>{
     // data= JSON.stringify(data);
-    console.log(data)
     return this.http.post<Data[]>(this.apiUrl+'store', {
       title:data.title,
       descrip:data.descrip,
@@ -28,7 +26,6 @@ export class StoreService {
   }
   editStore(data,id):Observable<Data[]>{
     // data= JSON.stringify(data);
-    console.log(data)
     return this.http.put<Data[]>(this.apiUrl+'store/'+id, {
       title:data.title,
       descrip:data.descrip,
@@ -49,7 +46,6 @@ export class StoreService {
     return this.http.get<Comment[]>(this.apiUrl+'storecoments?idStore='+id)
   }
   addComments(id,form):Observable<Comment[]>{
-    console.log(form.value)
     return this.http.post<Comment[]>(this.apiUrl+'storecoments',{
       UserName:form.value.nombre,
       comment:form.value.comentario,

@@ -19,7 +19,6 @@ export class ShowStoresComponent implements OnInit {
 
   ngOnInit(): void {
     this._storeService.getStores().subscribe(response => {
-      // console.log("tiendas",response);
       this.isLoad=true;
       this.tiendas = response;
     }, error => {

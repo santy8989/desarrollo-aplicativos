@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/products/services/product.service';
 import { StoreService } from 'src/app/stores/services/store.service';
@@ -16,7 +16,7 @@ export class LongCardComponent implements OnInit {
   public form: FormGroup
   comments:Comment[]
   isLoad:boolean=false;
-  constructor(private _productService: ProductService,private _storeService: StoreService,private formBuilder: FormBuilder ) { }
+  constructor(private cd: ChangeDetectorRef,private _productService: ProductService,private _storeService: StoreService,private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
     if(this.type=="product"){
@@ -71,15 +71,26 @@ export class LongCardComponent implements OnInit {
 
     })
   }
+  getComments(){
+    this._productService.getComments(this.id).subscribe(response => {
+      console.log(response);
+      this.comments=response
+      this.cd.detectChanges()
+      
+    }, error => {
+      console.error("tuve un Error" + error)
+
+    })
+  }
   addComent(){
     
     if(this.type=="product"){
       this._productService.addComments(this.id,this.form).subscribe(response => {
         console.log(response);
         if(this.type=="product"){
-          this.getProduct();
+          this.getComments();
         }else{
-          this.getStore();
+          this.getComments();
         }
         this.form.reset()
       }, error => {
