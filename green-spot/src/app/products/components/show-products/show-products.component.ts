@@ -21,7 +21,6 @@ export class ShowProductsComponent implements OnInit {
   ngOnInit(): void {
     
     this._productService.getProducts().subscribe(response => {
-      console.log(response);
       this.isLoad=true;
       this.productos = response;
     }, error => {

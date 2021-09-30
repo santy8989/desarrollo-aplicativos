@@ -29,7 +29,6 @@ export class ProductService {
   }
   addProduct(data):Observable<Data[]>{
     // data= JSON.stringify(data);
-    console.log(data)
     return this.http.post<Data[]>(this.apiUrl+'products', {
       title:data.title,
       descrip:data.descrip,
@@ -38,7 +37,6 @@ export class ProductService {
   }
   editProduct(data,id):Observable<Data[]>{
     // data= JSON.stringify(data);
-    console.log(data)
     return this.http.put<Data[]>(this.apiUrl+'products/'+id, {
       title:data.title,
       descrip:data.descrip,
@@ -54,7 +52,6 @@ export class ProductService {
     return this.http.get<Comment[]>(this.apiUrl+'comments?idProduct='+id)
   }
   addComments(id,form):Observable<Comment[]>{
-    console.log(form.value)
     return this.http.post<Comment[]>(this.apiUrl+'comments',{
       UserName:form.value.nombre,
       comment:form.value.comentario,

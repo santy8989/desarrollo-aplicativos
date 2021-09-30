@@ -17,7 +17,6 @@ export class CardComponent implements OnInit {
     }else{
       this.route="/store/view/"
     }
-    console.log("hola",this.element.title)
   }
 
 }

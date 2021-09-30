@@ -39,7 +39,6 @@ export class DialogBoxComponent {
     private _productService: ProductService,
     private _storeService: StoreService,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: Data) {
-    console.log(data);
     this.local_data = {...data};
     this.action = this.local_data.action;
     this.isValid=this.action=="Agregar" ? false : true 
@@ -55,13 +54,11 @@ export class DialogBoxComponent {
       this.body.image = this.local_data.image
     if(this.local_data.descrip)
       this.body.descrip = this.local_data.descrip
-      console.log(this.type,"bananaaaa")
     if(this.type=="producto")
     {
        switch (this.action) {
         case "Agregar": {
           this._productService.addProduct(this.body).subscribe(response => {
-            console.log(response);
             this.dialogRef.close({
               event: this.action,
               data: this.local_data
@@ -77,17 +74,13 @@ export class DialogBoxComponent {
               event: this.action,
               data: this.local_data
             });
-            console.log(response);
-
           }, error => {
             console.error("tuve un Error" + error)
-
           })
         }
         break;
         case "Eliminar": {
           this._productService.deleteProduct(this.local_data.id).subscribe(response => {
-            console.log(response);
             this.dialogRef.close({
               event: this.action,
               data: this.local_data
@@ -99,12 +92,9 @@ export class DialogBoxComponent {
         break;
       }
     }else{
-      console.log("dentro del else",this.action)
       switch (this.action) {
         case "Agregar": {
-          console.log("agrefar")
           this._storeService.addStore(this.body).subscribe(response => {
-            console.log(response);
             this.dialogRef.close({
               event: this.action,
               data: this.local_data
@@ -115,14 +105,11 @@ export class DialogBoxComponent {
         }
         break;
         case "Editar": {
-          console.log("editar")
           this._storeService.editStore(this.body,this.local_data.id).subscribe(response => {
             this.dialogRef.close({
               event: this.action,
               data: this.local_data
             });
-            console.log(response);
-
           }, error => {
             console.error("tuve un Error" + error)
 
@@ -130,9 +117,7 @@ export class DialogBoxComponent {
         }
         break;
         case "Eliminar": {
-          console.log("eliminar")
           this._storeService.deleteStore(this.local_data.id).subscribe(response => {
-            console.log(response);
             this.dialogRef.close({
               event: this.action,
               data: this.local_data

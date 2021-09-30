@@ -55,10 +55,8 @@ export class LongCardComponent implements OnInit {
   getProduct(){
     this.isLoad=false
     this._productService.getProduct(this.id).subscribe(response => {
-      console.log(response);
       this.data=response
       this._productService.getComments(this.id).subscribe(response => {
-        console.log(response);
         this.comments=response
         this.isLoad=true;
       }, error => {
@@ -73,10 +71,8 @@ export class LongCardComponent implements OnInit {
   }
   getComments(){
     this._productService.getComments(this.id).subscribe(response => {
-      console.log(response);
       this.comments=response
       this.cd.detectChanges()
-      
     }, error => {
       console.error("tuve un Error" + error)
 
@@ -86,7 +82,6 @@ export class LongCardComponent implements OnInit {
     
     if(this.type=="product"){
       this._productService.addComments(this.id,this.form).subscribe(response => {
-        console.log(response);
         if(this.type=="product"){
           this.getComments();
         }else{
@@ -99,7 +94,6 @@ export class LongCardComponent implements OnInit {
       })
     }else{
       this._storeService.addComments(this.id,this.form).subscribe(response => {
-        console.log(response);
         if(this.type=="product"){
           this.getProduct();
         }else{
@@ -115,11 +109,9 @@ export class LongCardComponent implements OnInit {
   getStore(){
     this.isLoad=false
     this._storeService.getStore(this.id).subscribe(response => {
-      console.log(response);
       this.data=response
       this.isLoad=true
       this._storeService.getComments(this.id).subscribe(response => {
-        console.log(response);
         this.comments=response
       }, error => {
         console.error("tuve un Error" + error)

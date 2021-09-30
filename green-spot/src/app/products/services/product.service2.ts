@@ -17,7 +17,6 @@ export class ProductService {
 
 
   getProducts():Observable<Product[]> {
-    console.log("service")
     const url = `${this.apiUrl}/products/`
     return this.http.get<Product[]>(url)
   }
