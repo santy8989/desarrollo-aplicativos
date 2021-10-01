@@ -11,6 +11,7 @@ import { Data } from '../../interfaces/data.interface';
 export class ProductService {
 
   private apiUrl: string = 'https://613eaa03e9d92a0017e1724f.mockapi.io/greenspot'
+  public hasChange:boolean=false
 
   constructor(private http: HttpClient) { }
 

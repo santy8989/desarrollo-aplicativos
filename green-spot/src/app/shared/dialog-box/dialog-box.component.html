@@ -1,9 +1,9 @@
 <!-- dialog-box.component.html -->
 
 <div mat-dialog-content>
-  <h1 mat-dialog-title> <strong>{{action}} {{type|titlecase}}</strong></h1>
+  <h1 mat-dialog-title class="text-center"> <strong>{{action}} {{type|titlecase}}</strong></h1>
   <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
-    <mat-form-field >
+    <mat-form-field class="">
       <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
     </mat-form-field>
     <mat-form-field >
@@ -21,11 +21,13 @@
     </mat-form-field>
   </ng-container>
   <ng-template #elseTemplate>
-   Seguro quiere eliminar <b>{{local_data.title}}</b>?
+    <div class="fs-5">
+      Seguro quiere eliminar <b>{{local_data.title}}</b>? una vez eliminado no es posible recuperarlo
+    </div> 
   </ng-template>
 </div>
-<div mat-dialog-actions>
-  <button type="submit"  [disabled]="!isValid" mat-button (click)="Submit()">{{action}}</button>
+<div mat-dialog-actions class="boton">
+  <button type="submit"  [disabled]="!isValid" mat-flat-button color="primary" (click)="Submit()">{{action}}</button>
   
   <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
 </div>

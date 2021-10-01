@@ -27,6 +27,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { LongCardComponent } from './long-card/long-card.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { CommentComponent } from './comment/comment.component';
 
 
 
@@ -42,7 +43,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     DialogBoxComponent,
     LongCardComponent,
     PaginatePipe,
-    SpinnerComponent
+    SpinnerComponent,
+    CommentComponent
 
   ],
   exports: [
@@ -58,7 +60,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatSortModule,
     LongCardComponent,
     PaginatePipe,
-    SpinnerComponent
+    SpinnerComponent,
+    CommentComponent
 
   ],
   imports: [

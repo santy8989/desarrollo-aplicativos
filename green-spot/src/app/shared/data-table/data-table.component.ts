@@ -80,7 +80,7 @@ export class DataTableComponent implements OnInit {
     obj.action = action;
     obj.type = this.type
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      width: '250px',
+      width: '500px',
       data: obj
     });
 

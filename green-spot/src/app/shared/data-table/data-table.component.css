@@ -1,5 +1,7 @@
 .custom-image{
     width: 7vw;
+    height:7vw ;
+    object-fit: contain;
 }
 table {
     width: 90%;

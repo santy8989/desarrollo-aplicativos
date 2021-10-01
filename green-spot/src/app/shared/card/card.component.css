@@ -1,0 +1,18 @@
+.custom-h{
+    height: 15vh;
+    object-fit: cover;
+    
+}
+.custom-descrip{
+    height: 17vh;
+   overflow-y:scroll;  
+}
+.custom-descrip::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 2px;    /* Tamaño del scroll en horizontal */
+    display: none;  
+}
+.tarjeta{
+    cursor: pointer;
+    
+}
