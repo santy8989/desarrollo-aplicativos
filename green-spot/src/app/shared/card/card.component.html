@@ -1,11 +1,17 @@
 
 <div routerLink="{{route}}{{element.id}}" class="card tarjeta" >
     <img class="card-img-top custom-h" src={{element.image}} alt="Card image cap">
-    <div class="card-body custom-descrip">
-      <h5 class="card-title text-center fs-5">{{element.title}}</h5>
-      <hr>
-      <p class="card-text ">{{element.descrip}}</p>
-    </div>
-    <a  routerLink="{{route}}{{element.id}}" class="btn btn-success">Ver {{type}}</a>
+    <div class="card-body ">
+        
+          <h5 class="card-title text-center fs-5">{{element.title}}</h5>
+          <hr>
+          <div class="custom-descrip">
+          <p class="card-text ">{{element.descrip}}</p>
+        </div>
+        <a  routerLink="{{route}}{{element.id}}" class="btn btn-success w-100">Ver {{type}}</a>
+      </div>
+     
+    
+   
   </div>
 

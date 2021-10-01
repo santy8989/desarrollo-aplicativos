@@ -4,14 +4,22 @@
     
 }
 .custom-descrip{
-    height: 17vh;
+    height: 15vh;
    overflow-y:scroll;  
 }
 .custom-descrip::-webkit-scrollbar {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 2px;    /* Tamaño del scroll en horizontal */
-    display: none;  
-}
+    width: 12px;         
+  }
+  
+  .custom-descrip::-webkit-scrollbar-track {
+    background: #fff;       
+  }
+  
+  .custom-descrip::-webkit-scrollbar-thumb {
+    background-color: #ccc;   
+    border-radius: 20px;       
+    border: 3px solid #fff; 
+  }
 .tarjeta{
     cursor: pointer;
     
