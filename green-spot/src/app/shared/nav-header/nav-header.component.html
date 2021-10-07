@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark custom-h">
     <div class="container-fluid bg-dark">
       <a class="navbar-brand" routerLink="/home">
         <img src="../../../assets/fevicon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -8,27 +8,34 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mt-1 mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/home">Home</a>
+            <a class="nav-link "  [routerLinkActive]="['active']" routerLink="/home">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item">
+            <a class="nav-link " [routerLinkActive]="['active']"  routerLink="/products"    role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
-            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="/products">Home</a></li>
-              <li><a class="dropdown-item" routerLink="/products/admin">Admin</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Tiendas
+            <li class="nav-item ">
+              <a class="nav-link custom-margin d-none d-md-none d-lg-block" [routerLinkActive]="['active']"  routerLink="/products/admin"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              --> Admin
             </a>
-            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="/store">Home</a></li>
-              <li><a class="dropdown-item" routerLink="/store/admin">Admin</a></li>
-            </ul>
+            <a class="nav-link ms-2 d-block d-md-block d-lg-none" [routerLinkActive]="['active']"  routerLink="/products/admin"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" [routerLinkActive]="['active']"  routerLink="/store"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tiendas 
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link custom-margin d-none d-md-none d-lg-block" [routerLinkActive]="['active']"  routerLink="/store/admin"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            --> Admin
+          </a>
+          <a class="nav-link ms-2 d-block d-md-block d-lg-none" [routerLinkActive]="['active']"  routerLink="/store/admin"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
           </li>
         </ul>
         <form class="d-flex">

@@ -132,8 +132,8 @@ export class DialogBoxComponent {
   closeDialog(){
     this.dialogRef.close({event:'Cancel'});
   }
-  checkValidity(tesst){
-    if(tesst) 
+  checkValidity(flag){
+    if(flag) 
       this.isValid=true
     else 
       this.isValid=false

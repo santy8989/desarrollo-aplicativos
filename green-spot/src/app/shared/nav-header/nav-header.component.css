@@ -3,7 +3,7 @@ a {
     color: white;
 }
 a:hover, a:active{
-    color: lightgray;
+    color: rgb(26, 25, 25);
 }
 .navigation-items{
     list-style-type: none;
@@ -17,4 +17,13 @@ mat-toolbar{
     mat-toolbar{
         border-radius: 0px;
     }
+}
+/* .custom-h{
+    height: 10vh;
+} */
+.custom-link{
+    margin-left: 5vh;
+}
+.custom-margin{
+    margin-left: -1.2vh;
 }

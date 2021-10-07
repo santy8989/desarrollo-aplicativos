@@ -95,9 +95,9 @@ export class LongCardComponent implements OnInit {
     }else{
       this._storeService.addComments(this.id,this.form).subscribe(response => {
         if(this.type=="product"){
-          this.getProduct();
+          this.getComments();
         }else{
-          this.getStore();
+          this.getComments();
         }
         this.form.reset()
       }, error => {

@@ -85,7 +85,10 @@ export class DataTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getData()
+      console.log("asdasd",result.event)
+      if(result.event!="Cancel"){
+        this.getData()
+      }
     });
   }
 
