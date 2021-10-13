@@ -28,7 +28,7 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element" class="action-link">
-          <a routerLink="/products/view/{{element.id}}"><button type="button" class="btn btn-success m-1"><mat-icon aria-hidden="false" >visibility</mat-icon></button></a>
+          <a routerLink="/{{route}}/view/{{element.id}}"><button type="button" class="btn btn-success m-1"><mat-icon aria-hidden="false" >visibility</mat-icon></button></a>
           <a (click)="openDialog('Editar',element)"><button type="button" class="btn btn-primary m-1"><mat-icon aria-hidden="false" >edit</mat-icon></button></a> 
           <a (click)="openDialog('Eliminar',element)"><button type="button" class="btn btn-danger m-1"><mat-icon aria-hidden="false" >delete</mat-icon></button></a>
         </td>

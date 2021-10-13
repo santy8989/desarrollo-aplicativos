@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {ProductoViewComponent  } from './components/producto-view/producto-view.component';
+import { ProductsRoutingModule } from './products-routing.module';
 
 
 
@@ -29,7 +30,8 @@ import {ProductoViewComponent  } from './components/producto-view/producto-view.
     CommonModule,
     RouterModule,
     SharedModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ProductsRoutingModule
   ]
 })
 export class ProductsModule {

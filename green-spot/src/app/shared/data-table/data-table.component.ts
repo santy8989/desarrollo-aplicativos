@@ -15,6 +15,7 @@ import { MatSort } from '@angular/material/sort';
 
 export class DataTableComponent implements OnInit {
   @Input() type: string;
+  route:string
   data: Data[]
   flag: boolean = true
 
@@ -43,6 +44,7 @@ export class DataTableComponent implements OnInit {
   
   ngOnInit(): void {
     this.getData();
+    this.route=this.type=="producto" ? "products" : "store" 
   }
   getData() {
     this.isLoad=false

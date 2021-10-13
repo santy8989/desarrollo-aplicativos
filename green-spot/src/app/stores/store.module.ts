@@ -8,6 +8,7 @@ import { ShowStoresComponent } from '../stores/components/show-stores/show-store
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { StoreViewComponent } from './components/store-view/store-view.component';
+import { StoreRoutingModule } from './stores-routing.module';
 
 
 
@@ -28,6 +29,7 @@ import { StoreViewComponent } from './components/store-view/store-view.component
     CommonModule,
     RouterModule,
     SharedModule,
+    StoreRoutingModule
     
   ]
 })

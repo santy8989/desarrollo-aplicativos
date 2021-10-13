@@ -5,6 +5,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductsModule } from '../products/products.module';
 import { StoreModule } from '../stores/store.module';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -20,7 +21,8 @@ import { StoreModule } from '../stores/store.module';
     RouterModule,
     SharedModule,
     ProductsModule,
-    StoreModule
+    StoreModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule {
