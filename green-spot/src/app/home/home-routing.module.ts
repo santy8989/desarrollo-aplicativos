@@ -1,28 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
 import { LandingComponent } from './components/landing/landing.component';
-
+import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
   {
     path:'',
-    children: [
-      {
-        path: 'home',
-        component: LandingComponent,
-        pathMatch: 'full'
-      },
-      // {
-      //   path: '**',
-      //   redirectTo: 'home'
-      // },
-      
-    ]
+    component:LandingComponent,
+    pathMatch:'full'
+    
   }
 ]
-
 @NgModule({
   declarations: [],
   imports: [

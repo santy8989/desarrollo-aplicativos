@@ -5,10 +5,9 @@ import { LandingStoresComponent } from './components/landing-stores/landing-stor
 import { AdminStoresComponent } from './components/admin-stores/admin-stores.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShowStoresComponent } from '../stores/components/show-stores/show-stores.component';
-import { PaginatePipe } from '../pipes/paginate.pipe';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { StoreViewComponent } from './components/store-view/store-view.component';
 import { StoreRoutingModule } from './stores-routing.module';
+
 
 
 
@@ -19,6 +18,7 @@ import { StoreRoutingModule } from './stores-routing.module';
     ShowStoresComponent,
     StoreViewComponent,
     
+    
   ],
   exports: [
     LandingStoresComponent,
@@ -28,9 +28,8 @@ import { StoreRoutingModule } from './stores-routing.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule,
+    SharedModule, 
     StoreRoutingModule
-    
   ]
 })
 export class StoreModule {

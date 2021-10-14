@@ -13,18 +13,18 @@ import { ProductsRoutingModule } from './products-routing.module';
 
 
 
+
 @NgModule({
   declarations: [
     AdminProductsComponent,
              HomeProductsComponent,
              ShowProductsComponent,
-             
              ProductoViewComponent,
                             
   ],
   exports: [
     ShowProductsComponent,
-    ProductoViewComponent
+    ProductoViewComponent,
   ],
   imports: [
     CommonModule,

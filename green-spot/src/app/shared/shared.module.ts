@@ -13,11 +13,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CoverImageComponent } from './cover-image/cover-image.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component'
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -71,7 +68,7 @@ import { CommentComponent } from './comment/comment.component';
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     FormsModule,
     MatTableModule,
     MatDialogModule,

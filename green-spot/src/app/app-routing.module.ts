@@ -1,7 +1,11 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
+import { LandingComponent } from "./home/components/landing/landing.component";
+import { ProductoViewComponent } from "./products/components/producto-view/producto-view.component";
+// import { ProductoViewComponent } from './components/producto-view/producto-view.component';
 
 const routes: Routes = [
+ 
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
@@ -11,18 +15,19 @@ const routes: Routes = [
     loadChildren: () => import('./products/products.module').then( m => m.ProductsModule)
   },
   {
-    path: 'store',
-    loadChildren: () => import('./stores/store.module').then( m => m.StoreModule)
-  },
-  {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomeModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomeModule),
+  },
+  
+  {
+    path: 'store',
+    loadChildren: () => import('./stores/store.module').then( m => m.StoreModule),
   },
   {
-    path: '**',
-    redirectTo: 'home'
-  }
-  
+    path: '',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
 ];
 
 @NgModule({

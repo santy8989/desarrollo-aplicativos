@@ -11,30 +11,20 @@ import { StoreViewComponent } from "./components/store-view/store-view.component
 const routes: Routes = [
   {
     path:'',
-    children: [
-      {
-        path: 'store',
-        component: LandingStoresComponent,
-        pathMatch: 'full'
-      },
-      {
-        path: 'store/admin',
-        component: AdminStoresComponent,
-        pathMatch: 'full'
-      },
-      
-      {
-        path: 'store/view/:id',
-        component: StoreViewComponent,
-        pathMatch: 'full'
-      },
-      // {
-      //   path: '**',
-      //   redirectTo: 'store'
-      // }
-    ]
+    component: LandingStoresComponent,
+    pathMatch: 'full',
+  },
+  {
+    path:'admin',
+    component:AdminStoresComponent
+  },
+  {
+  path:'view/:id',
+  component:StoreViewComponent
   }
-]
+
+
+];
 
 @NgModule({
   declarations: [],

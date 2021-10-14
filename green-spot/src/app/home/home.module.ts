@@ -6,12 +6,15 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductsModule } from '../products/products.module';
 import { StoreModule } from '../stores/store.module';
 import { HomeRoutingModule } from './home-routing.module';
+import { ShowProductsComponent } from '../products/components/show-products/show-products.component';
+
 
 
 
 @NgModule({
   declarations: [
     LandingComponent,
+    // ShowProductsComponent
   ],
   exports: [
     LandingComponent
@@ -19,9 +22,6 @@ import { HomeRoutingModule } from './home-routing.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule,
-    ProductsModule,
-    StoreModule,
     HomeRoutingModule
   ]
 })
