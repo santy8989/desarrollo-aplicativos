@@ -4,7 +4,6 @@ import {RouterModule} from "@angular/router";
 import { LandingStoresComponent } from './components/landing-stores/landing-stores.component';
 import { AdminStoresComponent } from './components/admin-stores/admin-stores.component';
 import { SharedModule } from '../shared/shared.module';
-import { ShowStoresComponent } from '../stores/components/show-stores/show-stores.component';
 import { StoreViewComponent } from './components/store-view/store-view.component';
 import { StoreRoutingModule } from './stores-routing.module';
 
@@ -15,15 +14,10 @@ import { StoreRoutingModule } from './stores-routing.module';
   declarations: [
     LandingStoresComponent,
     AdminStoresComponent,
-    ShowStoresComponent,
-    StoreViewComponent,
-    
-    
+    StoreViewComponent, 
   ],
   exports: [
-    LandingStoresComponent,
-    ShowStoresComponent,
-    
+    LandingStoresComponent,   
   ],
   imports: [
     CommonModule,

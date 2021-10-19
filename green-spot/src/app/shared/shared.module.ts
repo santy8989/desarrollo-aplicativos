@@ -25,6 +25,7 @@ import { LongCardComponent } from './long-card/long-card.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CommentComponent } from './comment/comment.component';
+import { ShowComponent } from './show/show.component';
 
 
 
@@ -41,7 +42,8 @@ import { CommentComponent } from './comment/comment.component';
     LongCardComponent,
     PaginatePipe,
     SpinnerComponent,
-    CommentComponent
+    CommentComponent,
+    ShowComponent
 
   ],
   exports: [
@@ -58,7 +60,8 @@ import { CommentComponent } from './comment/comment.component';
     LongCardComponent,
     PaginatePipe,
     SpinnerComponent,
-    CommentComponent
+    CommentComponent,
+    ShowComponent
 
   ],
   imports: [

@@ -70,6 +70,8 @@ export class LongCardComponent implements OnInit {
     })
   }
   getComments(){
+    console.log("asdasd",this.id);
+    if(this.type=="product"){
     this._productService.getComments(this.id).subscribe(response => {
       this.comments=response
       this.cd.detectChanges()
@@ -77,16 +79,21 @@ export class LongCardComponent implements OnInit {
       console.error("tuve un Error" + error)
 
     })
+    }else{
+      this._storeService.getComments(this.id).subscribe(response => {
+        this.comments=response
+        this.cd.detectChanges()
+      }, error => {
+        console.error("tuve un Error" + error)
+  
+      })
+    }
   }
   addComent(){
     
     if(this.type=="product"){
       this._productService.addComments(this.id,this.form).subscribe(response => {
-        if(this.type=="product"){
-          this.getComments();
-        }else{
-          this.getComments();
-        }
+        this.getComments();
         this.form.reset()
       }, error => {
         console.error("tuve un Error" + error)
@@ -94,11 +101,7 @@ export class LongCardComponent implements OnInit {
       })
     }else{
       this._storeService.addComments(this.id,this.form).subscribe(response => {
-        if(this.type=="product"){
-          this.getComments();
-        }else{
-          this.getComments();
-        }
+        this.getComments();
         this.form.reset()
       }, error => {
         console.error("tuve un Error" + error)

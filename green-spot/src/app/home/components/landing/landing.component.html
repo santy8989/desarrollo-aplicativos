@@ -1,32 +1,11 @@
 
-<!-- 
-<div class="row" > 
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    
-    <br>
-    <p>Categorias pricpales de productos</p><br>
-    <div class="row">
-      <app-categories></app-categories>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-6">
-    <div class="row">
-      <p>Productos Destacados</p>
-      <app-show-products></app-show-products>
-    </div>
-    
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-    <p>anuncio</p>
-  </div>
-</div>  -->
-<!-- <app-cover-image></app-cover-image> -->
+
 <div class="container">
   <div class="row " > 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="row">
         <p class="titulo">Productos Destacados</p>
-        <!-- <app-show-products [page_size]="4"></app-show-products> -->
+        <app-show [page_size]="4" [type]="'producto'"></app-show>
       </div>
 
   </div> 
@@ -34,13 +13,9 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="row">
         <p class="titulo">Tiendas Destacadas</p>
-        <!-- <app-show-stores [page_size]="4"></app-show-stores> -->
+        <app-show [page_size]="4" [type]="'tienda'"></app-show>
       </div>
 
   </div>
   
 </div>
-
-<!-- <div class="">
-  <app-image-slider></app-image-slider>
-</div> -->

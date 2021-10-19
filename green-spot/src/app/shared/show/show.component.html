@@ -1,0 +1,16 @@
+<ng-container *ngIf="isLoad; else loading">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of content  | paginate:page_size:page_number">
+        <app-card [element]="item" [type]="type" class="m-1"></app-card>
+      </div>
+  
+    </div>
+    <mat-paginator length={{content.length}} [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions"
+      (page)="handlePage($event)" aria-label="Select page">
+    </mat-paginator>
+  </ng-container>
+  
+  <ng-template #loading>
+    <app-spinner></app-spinner>
+  </ng-template>
+  

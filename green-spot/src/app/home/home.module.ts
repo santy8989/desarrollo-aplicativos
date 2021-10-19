@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductsModule } from '../products/products.module';
 import { StoreModule } from '../stores/store.module';
 import { HomeRoutingModule } from './home-routing.module';
-import { ShowProductsComponent } from '../products/components/show-products/show-products.component';
 
 
 
@@ -22,7 +21,8 @@ import { ShowProductsComponent } from '../products/components/show-products/show
   imports: [
     CommonModule,
     RouterModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule {
