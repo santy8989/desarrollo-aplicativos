@@ -5,6 +5,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import {AppRoutingModule} from "../app-routing.module";
 import {AuthRoutingModule} from "./auth-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { AngularMaterialModule } from '../angular-material.module';
 
 
 
@@ -16,7 +17,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMaterialModule
   ]
 })
 export class AuthModule { }

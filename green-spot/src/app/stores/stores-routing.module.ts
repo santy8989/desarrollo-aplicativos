@@ -4,6 +4,8 @@ import {RouterModule, Routes} from "@angular/router";
 import { AdminStoresComponent } from "./components/admin-stores/admin-stores.component";
 import { LandingStoresComponent } from "./components/landing-stores/landing-stores.component";
 import { StoreViewComponent } from "./components/store-view/store-view.component";
+import { LoginGuard } from '../shared/guards/LoginGuard';
+import { AdminGuard } from '../shared/guards/AdminGuard';
 
 
 
@@ -16,7 +18,8 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    component:AdminStoresComponent
+    component:AdminStoresComponent,
+    canActivate: [LoginGuard, AdminGuard]
   },
   {
   path:'view/:id',
@@ -33,6 +36,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ], exports: [
     RouterModule
+  ], providers:[
+    LoginGuard,AdminGuard
   ]
 })
 export class StoreRoutingModule { }

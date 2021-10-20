@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeProductsComponent } from './components/home-products/home-products.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { ProductoViewComponent } from './components/producto-view/producto-view.component';
+import { LoginGuard } from '../shared/guards/LoginGuard';
+import { AdminGuard } from '../shared/guards/AdminGuard';
 
 const routes: Routes = [
   {
@@ -12,7 +14,8 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    component:AdminProductsComponent
+    component:AdminProductsComponent,
+    canActivate: [LoginGuard, AdminGuard]
   },
   {
   path:'view/:id',
@@ -29,6 +32,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ], exports: [
     RouterModule
+  ], providers:[
+    LoginGuard,AdminGuard
   ]
 })
 export class ProductsRoutingModule { }

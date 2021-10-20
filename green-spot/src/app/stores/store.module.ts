@@ -14,10 +14,13 @@ import { StoreRoutingModule } from './stores-routing.module';
   declarations: [
     LandingStoresComponent,
     AdminStoresComponent,
-    StoreViewComponent, 
+    StoreViewComponent,
+ 
   ],
   exports: [
-    LandingStoresComponent,   
+    LandingStoresComponent,
+    
+    
   ],
   imports: [
     CommonModule,

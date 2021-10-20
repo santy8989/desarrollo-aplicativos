@@ -1,6 +1,6 @@
 export interface Usuario {
   name:     string;
-  password: string;
+  pass: string;
   admin:    boolean;
   id:       string;
 }
@@ -8,6 +8,6 @@ export interface Usuario {
 export interface UsuarioDTO {
   name:     string;
   admin:    boolean;
-  password?: string;
+  pass?: string;
   id:       string;
 }

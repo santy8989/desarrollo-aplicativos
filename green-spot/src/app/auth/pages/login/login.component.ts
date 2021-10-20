@@ -39,11 +39,11 @@ export class LoginComponent implements OnInit {
       if (usuarios) {
         usuarios.map(usuario => {
           if (usuario.name === this.form.value.user) {
-            if (usuario.password === this.form.value.password) {
+            if (usuario.pass === this.form.value.password) {
               let usuarioDTO:UsuarioDTO = usuario;
-              delete usuarioDTO.password
+              delete usuarioDTO.pass
               localStorage.setItem('usuario',JSON.stringify(usuarioDTO))
-              this.router.navigate(['/heroes'])
+              this.router.navigate(['/home'])
             }
           }
         })

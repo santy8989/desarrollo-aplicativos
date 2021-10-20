@@ -8,7 +8,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AuthService {
 
-  private baseUrl :string = "https://610f5d459b698d0017175310.mockapi.io/api/v1/usuarios";
+  private baseUrl :string = "https://616f5cb1715a630017b39c57.mockapi.io/greenspot/user";
   constructor(private http: HttpClient) { }
 
   login(usuario:string):Observable<Usuario[]> {
