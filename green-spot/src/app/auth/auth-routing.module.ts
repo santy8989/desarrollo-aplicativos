@@ -8,10 +8,7 @@ import { AdminProductsComponent } from '../products/components/admin-products/ad
 // import {LoginGuard} from "../shared/guards/LoginGuard";
 
 const routes: Routes = [
-  {
-    path:'',
-    // component:LoginComponent,
-    children: [
+ 
       {
         path: 'login',
         component: LoginComponent,
@@ -20,9 +17,17 @@ const routes: Routes = [
         path: 'registro',
         component: RegistroComponent
       },
+      {
+        path:'',
+        redirectTo:'login'
+      },
+      {
+        path:'**',
+        redirectTo:'login'
+      },
+     
       
-    ]
-  }
+
 ]
 
 @NgModule({

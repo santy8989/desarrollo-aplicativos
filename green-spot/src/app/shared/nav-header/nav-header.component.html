@@ -39,8 +39,12 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <ul class="navbar-nav me-auto mt-1 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " *ngIf="isUser" [routerLinkActive]="['active']" (click)="logout()" routerLink="/home">Logout</a>
+              <a class="nav-link "  *ngIf="!isUser"[routerLinkActive]="['active']" routerLink="/auth">login</a>
+            </li>
+          </ul>
         </form>
       </div>
     </div>

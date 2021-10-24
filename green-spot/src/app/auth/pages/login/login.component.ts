@@ -29,17 +29,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("Entre al login");
-    this.login()
+    
   }
 
   login() {
-    console.log(this.form.value.user)
     this.authService.login(this.form.value.user).subscribe(usuarios => {
       if (usuarios) {
         usuarios.map(usuario => {
           if (usuario.name === this.form.value.user) {
-            if (usuario.pass === this.form.value.password) {
+            if (usuario.pass === btoa(this.form.value.password)) {
               let usuarioDTO:UsuarioDTO = usuario;
               delete usuarioDTO.pass
               localStorage.setItem('usuario',JSON.stringify(usuarioDTO))
