@@ -5,6 +5,9 @@ import {LoginComponent} from "./pages/login/login.component";
 import {RegistroComponent} from "./pages/registro/registro.component";
 import { LandingComponent } from '../home/components/landing/landing.component';
 import { AdminProductsComponent } from '../products/components/admin-products/admin-products.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginGuard } from '../shared/guards/LoginGuard';
+import { AdminGuard } from '../shared/guards/AdminGuard';
 // import {LoginGuard} from "../shared/guards/LoginGuard";
 
 const routes: Routes = [
@@ -17,6 +20,12 @@ const routes: Routes = [
         path: 'registro',
         component: RegistroComponent
       },
+      {
+        path: 'admin',
+        component: AdminComponent,
+        canActivate: [LoginGuard, AdminGuard]
+      },
+      
       {
         path:'',
         redirectTo:'login'
@@ -37,8 +46,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ], exports: [
     RouterModule
-  ], providers: [
-    // LoginGuard
+  ], providers:[
+    LoginGuard,AdminGuard
   ]
 })
 export class AuthRoutingModule { }

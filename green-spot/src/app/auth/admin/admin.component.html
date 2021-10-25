@@ -1,0 +1,14 @@
+<app-nav-header></app-nav-header>
+<app-cover-image route="../../../assets/code.png" title="Admin Users"></app-cover-image>
+<div class="container">
+    <div [hidden]="!isLoad"*ngFor="let user of Usuarios" class="contenedor">
+        <h1 class="custom">{{user.name}}</h1>
+        <button *ngIf="user.admin" type="button" class="btn btn-danger margin boton ms-5" (click)="editUser(false,user.id)">Hacer Invitado</button>  
+        <button *ngIf="!user.admin" type="button" class="btn btn-primary margin ms-5 boton" (click)="editUser(true,user.id)">Hacer admin</button>  
+    </div>
+    <div [hidden]="isLoad">
+        <app-spinner></app-spinner>
+      </div>
+    <br>
+</div>
+

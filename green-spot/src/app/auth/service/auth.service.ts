@@ -14,6 +14,15 @@ export class AuthService {
   login(usuario:string):Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${this.baseUrl}/?name=${usuario}`)
   }
+  getUsers():Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.baseUrl}`)
+  }
+  editUser(admin:boolean,id:string):Observable<Usuario[]> {
+    return this.http.put<Usuario[]>(this.baseUrl+'/'+id,{
+      admin:admin
+    })
+  } 
+
   
   register(form:any):Observable<Usuario[]>{
     return this.http.post<Usuario[]>(this.baseUrl,{

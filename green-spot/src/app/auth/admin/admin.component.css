@@ -1,0 +1,15 @@
+.custom{
+width: 20vw!important;
+
+}
+.boton{
+    width: 150px!important;
+    
+    }
+
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
