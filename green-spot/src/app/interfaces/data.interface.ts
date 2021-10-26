@@ -3,5 +3,6 @@ export interface Data {
   descrip: string;
   image: string;
   id?: number;
-  store?:number
+  lat?:number;
+  lon?:number;
 }

@@ -22,6 +22,8 @@ export class StoreService {
       title:data.title,
       descrip:data.descrip,
       image:data.image,
+      lat:data.lat,
+      lon:data.lon
   })
   }
   editStore(data,id):Observable<Data[]>{
@@ -30,6 +32,8 @@ export class StoreService {
       title:data.title,
       descrip:data.descrip,
       image:data.image,
+      lat:data.lat,
+      lon:data.lon
   })
   }
   deleteStore(id):Observable<Data[]>{

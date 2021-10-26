@@ -2,28 +2,56 @@
 
 <div mat-dialog-content>
   <h1 mat-dialog-title class="text-center"> <strong>{{action}} {{type|titlecase}}</strong></h1>
-  <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
-    <mat-form-field class="">
-      <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
-    </mat-form-field>
-    <mat-form-field >
-      <input  placeholder="URL image" matInput [(ngModel)]="local_data.image">
-    </mat-form-field>
-    <mat-form-field >
-      <mat-label>Descripción</mat-label>
-      <textarea matInput
-                [(ngModel)]="local_data.descrip"
-                cdkTextareaAutosize
-                #autosize="cdkTextareaAutosize"
-                cdkAutosizeMinRows="1"
-                cdkAutosizeMaxRows="5"
-                ></textarea>
-    </mat-form-field>
-  </ng-container>
+  <ng-container *ngIf="type == 'producto'; else store">
+    <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
+      <mat-form-field class="">
+        <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
+      </mat-form-field>
+      <mat-form-field >
+        <input  placeholder="URL image" matInput [(ngModel)]="local_data.image">
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>Descripción</mat-label>
+        <textarea matInput
+                  [(ngModel)]="local_data.descrip"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  ></textarea>
+      </mat-form-field>
+    </ng-container>
+</ng-container>
   <ng-template #elseTemplate>
     <div class="fs-5">
       Seguro quiere eliminar <b>{{local_data.title}}</b>? una vez eliminado no es posible recuperarlo
     </div> 
+  </ng-template>
+  <ng-template #store>
+    <ng-container *ngIf="action != 'Eliminar'; else elseTemplate">
+      <mat-form-field class="">
+        <input required #name placeholder="Nombre" matInput [(ngModel)]="local_data.title" (change)="checkValidity($event.target.value)">
+      </mat-form-field>
+      <mat-form-field >
+        <input  placeholder="URL image" matInput [(ngModel)]="local_data.image">
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>Descripción</mat-label>
+        <textarea matInput
+                  [(ngModel)]="local_data.descrip"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  ></textarea>
+      </mat-form-field>
+      <mat-form-field >
+        <input  placeholder="Latitud" type="number" matInput [(ngModel)]="local_data.lat">
+      </mat-form-field>
+      <mat-form-field >
+        <input  placeholder="Longitud" type="number" matInput [(ngModel)]="local_data.lon">
+      </mat-form-field>
+    </ng-container>
   </ng-template>
 </div>
 <div mat-dialog-actions class="boton">

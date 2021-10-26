@@ -26,6 +26,7 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CommentComponent } from './comment/comment.component';
 import { ShowComponent } from './show/show.component';
+import { MapComponent } from './map/map.component';
 
 
 
@@ -43,7 +44,8 @@ import { ShowComponent } from './show/show.component';
     PaginatePipe,
     SpinnerComponent,
     CommentComponent,
-    ShowComponent
+    ShowComponent,
+    MapComponent
 
   ],
   exports: [

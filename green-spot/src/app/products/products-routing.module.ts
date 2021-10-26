@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path:'admin',
     component:AdminProductsComponent,
-    canActivate: [LoginGuard, AdminGuard]
+    
   },
   {
   path:'view/:id',

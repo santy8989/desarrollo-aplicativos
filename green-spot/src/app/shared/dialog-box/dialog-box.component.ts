@@ -24,6 +24,8 @@ export class DialogBoxComponent {
     title:"",
     image:"https://www.kenyons.com/wp-content/uploads/2017/04/default-image.jpg",
     descrip:"",
+    lat:0,
+    lon:0
   };
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
@@ -48,10 +50,15 @@ export class DialogBoxComponent {
 
  
   Submit() {
-   
+   console.log(this.local_data)
+  //  throw("asdasd")
     this.body.title = this.local_data.title
     if(this.local_data.image)
       this.body.image = this.local_data.image
+    if(this.local_data.lat)
+      this.body.lat = this.local_data.lat
+    if(this.local_data.lon)
+      this.body.lon = this.local_data.lon
     if(this.local_data.descrip)
       this.body.descrip = this.local_data.descrip
     if(this.type=="producto")
