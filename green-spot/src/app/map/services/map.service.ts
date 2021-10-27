@@ -6,9 +6,7 @@ import { Data } from 'src/app/interfaces/data.interface';
   providedIn: 'root'
 })
 export class MapService {
-   
   mapboxKey:string='pk.eyJ1Ijoic2FudHlnYXJjZXMiLCJhIjoiY2tzeGU2bTltMXI1ejJ2bWx6NGhpc254ciJ9.75Owz-hObZf5MxQfZkxLMg'
-
   mapbox = (mapboxgl as typeof mapboxgl);
   map: mapboxgl.Map;
   style = `mapbox://styles/mapbox/streets-v11`;
@@ -17,7 +15,6 @@ export class MapService {
   lng = -68.5245826 ;
   zoom = 13;
   constructor() {
-    // Asignamos el token desde las variables de entorno
     this.mapbox.accessToken = this.mapboxKey;
   }
   buildMap() {

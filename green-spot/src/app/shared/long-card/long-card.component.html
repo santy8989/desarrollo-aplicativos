@@ -18,21 +18,14 @@
                 <mat-form-field class="ms-4 w-100 pe-4 " >
                     <input required formControlName="nombre" placeholder="Nombre de usuario (entre 3 y 20 carácteres)" class="w-100" matInput>
                 </mat-form-field>
-                <!-- <p *ngIf="form.get('nombre').errors.required" class="custom-err ms-4">Por favor ingrese un nombre de al menos 3 carácteres</p>
-                <p *ngIf="form.get('nombre').errors.min" class="custom-err ms-4">Por favor ingrese un nombre de al menos 3 carácteres</p>
-                <p *ngIf="form.get('nombre').errors.max" class="custom-err ms-4">Por favor ingrese un nombre de no mas de 10 carácteres </p> -->
                 <mat-form-field class="ms-4 w-100 pe-4 " >
                     <input required formControlName="comentario" placeholder="Comentario( min 6 carácteres)" class="w-100" matInput>
                 </mat-form-field>
-                <!-- <p *ngIf="form.get('comentario').errors.required" class="custom-err ms-4">Por favor ingrese un comentario de al menos 6 carácteres</p>
-                <p *ngIf="form.get('comentario').errors.min" class="custom-err ms-4">Por favor ingrese un comentario de al menos 6 carácteres</p>
-                <p *ngIf="form.get('comentario').errors.max" class="custom-err ms-4">Por favor ingrese un comentario de no mas de 30 carácteres </p> -->
                 <mat-form-field class="ms-4 w-100 pe-4 " >
                     <input required type="number" formControlName="score"  placeholder="Puntuación (0 al 5)" class="w-100" matInput>
                 </mat-form-field>
                 <!-- <p *ngIf="form.get('score').errors.max" class="custom-err ms-4">Genial que te haya gustado pero es solo hasta 5 la puntuación</p>
                 <p *ngIf="form.get('score').errors.min" class="custom-err ms-4">tan mal estaba? 0 es la minima puntuación</p> -->
-                <!-- <p *ngIf="form.get('score').errors.required && form.get('score').dirty" class="custom-err ms-4">Por favor ingrese una puntuación del 0 al 5</p> -->
                 <div class="d-flex flex-row-reverse bd-highlight">
                     <button [disabled]="!form.valid" type="button"  class="btn btn-primary  me-4 my-2" (click)="addComent()">Agregar</button>
                 </div>

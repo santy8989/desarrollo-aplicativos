@@ -50,8 +50,6 @@ export class DialogBoxComponent {
 
  
   Submit() {
-   console.log(this.local_data)
-  //  throw("asdasd")
     this.body.title = this.local_data.title
     if(this.local_data.image)
       this.body.image = this.local_data.image
