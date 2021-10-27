@@ -19,7 +19,7 @@ export class MarkerMapComponent implements OnInit {
     this.map.buildMap();
     this._storeService.getStores().subscribe(response => {
       response.map(store => {
-        this.map.createMarker(store.lat, store.lon);;
+        this.map.createMarker(store.lat, store.lon,store);;
       })
     }, error => {
       console.error("tuve un Error" + error)
