@@ -1,7 +1,8 @@
+<br>
 <div *ngIf="isLoad; else loading" class="card my-3">
-    <div class="card-head">
+    <div class="card-head custom-div">
         <h5 class="card-title custom-head">{{data.title}}</h5>
-      </div>
+    </div>
     <img src={{data.image}} class="card-img-top" alt="...">
     <div class="card-body">
       <p class="card-text custom-body">{{data.descrip}}</p>
@@ -42,3 +43,5 @@
   <ng-template #loading class="loader">
     <app-spinner></app-spinner>
   </ng-template>
+  <br>
+  <br>

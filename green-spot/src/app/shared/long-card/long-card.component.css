@@ -20,6 +20,12 @@
     margin-top:-0.75rem ;
     background-color:rgb(184, 184, 184);
 }
+.custom-div{
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .comment-content{
     color: red;
     font-family: "Trebuchet MS", Verdana, sans-serif;
